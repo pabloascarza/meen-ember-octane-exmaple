@@ -1,9 +1,10 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { task } from 'ember-concurrency';
+import { next } from '@ember/runloop';
 
 export default class MainComponent extends Component {
-  @tracked _article = null;
+  @tracked _article = null;	
 
   constructor() {
     super(...arguments);
@@ -15,13 +16,15 @@ export default class MainComponent extends Component {
     let request = yield fetch(`http://localhost:4200/api/articles/${id}`);
     let json = yield request.json();
     this._article = json.articles;
-  }).restartable()) fetchArticle;
+  }).drop()) fetchArticle;
 
   get article () {
     if (this._article && this._article.id === this.args.articleId) {
       return this._article;
     }
-    this.fetchArticle.perform();
-    return null;
+    next(() => {
+      this.fetchArticle.perform();
+    });
+    return this._article;
   }
 }
