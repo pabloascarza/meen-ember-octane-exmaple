@@ -1,0 +1,12 @@
+{{#if fetchArticles.isRunning}}
+  <h1>Loading articles...</h1>
+{{else}}
+  <ul>
+    {{#each this.articles as |article|}}
+      <li>
+        <LinkTo @route="articles" @model="{{article.id}}">{{article.title}}</LinkTo>
+        <p>{{article.summary}}</p>
+      </li>
+    {{/each}}
+  </ul>
+{{/if}}

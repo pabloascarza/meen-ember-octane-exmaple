@@ -1,0 +1,6 @@
+{{#if this.fetchArticle.isRunning}}
+  <h1>loading article data...</h1>
+{{else}}
+  <Articles::Components::ArticleDetail @article={{this.article}}/>
+{{/if}}
+
