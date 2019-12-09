@@ -1,7 +1,6 @@
 # my-news
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This is the frontend example project
 
 ## Prerequisites
 
@@ -10,11 +9,11 @@ You will need the following things properly installed on your computer.
 * [Git](https://git-scm.com/)
 * [Node.js](https://nodejs.org/) (with npm)
 * [Ember CLI](https://ember-cli.com/)
-* [Google Chrome](https://google.com/chrome/)
+* [Google Chrome](https://google.com/chrome/) or ¨[Mozilla Firefox](https://www.mozilla.org/)
 
 ## Installation
 
-* `git clone <repository-url>` this repository
+* `git clone https://github.com/pabloascarza/meen-ember-octane-exmaple.git` this repository
 * `cd my-news`
 * `npm install`
 
