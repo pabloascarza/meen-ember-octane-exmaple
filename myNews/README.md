@@ -13,7 +13,7 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone https://github.com/pabloascarza/meen-ember-octane-exmaple.git` this repository
+* `git clone https://github.com/pabloascarza/meen-ember-octane-exmaple.git` 
 * `cd my-news`
 * `npm install`
 
