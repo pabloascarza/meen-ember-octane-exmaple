@@ -1,8 +1,9 @@
 const awilix = require('awilix');
 const fetchArticles = require('./Application/UseCases/Article/fetchArticles');
 const fetchArticle = require('./Application/UseCases/Article/fetchArticle');
-const ArticleRepository = require('./Infrastrucure/Repositories/Article/ArticleRepository');
-const presentArticles = require('./Infrastrucure/Presenters/Article/restSerializerArticle');
+const ArticleRepository = require('./Infrastructure/Repositories/Article/ArticleRepository');
+const presentArticles = require('./Infrastructure/Presenters/Article/restSerializerArticle');
+const articleMongoAdapter = require('./Infrastructure/Adapters/Article/articleMongo');
 
 const container = awilix.createContainer({
 	  injectionMode: awilix.InjectionMode.PROXY
@@ -18,5 +19,8 @@ container.register({
 });
 container.register({
 	  presentArticles: awilix.asFunction(presentArticles)
+});
+container.register({
+	articleMongoAdapter: awilix.asFunction(articleMongoAdapter)
 });
 module.exports = container;
