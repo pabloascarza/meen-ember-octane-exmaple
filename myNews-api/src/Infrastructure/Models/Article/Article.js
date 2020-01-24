@@ -11,7 +11,7 @@ const Article = new Schema({
     summary: {
         type: String
     },
-    relatedArticle: {
+    relatedArticleId: {
         type: mongoose.Schema.Types.ObjectId, ref: 'Article'
     }
 });
