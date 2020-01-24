@@ -13,7 +13,7 @@ export default class MainComponent extends Component {
 
   @(task(function*() {
     let id = this.args.articleId;
-    let request = yield fetch(`http://localhost:4200/api/articles/${id}`);
+    let request = yield fetch(`http://localhost:4000/articles/${id}`);
     let json = yield request.json();
     this._article = json.articles;
   }).drop()) fetchArticle;

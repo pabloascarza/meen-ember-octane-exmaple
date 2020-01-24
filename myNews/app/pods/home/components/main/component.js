@@ -10,7 +10,7 @@ export default class MainComponent extends Component {
   }
 	  
   @(task(function*() {
-    let request = yield fetch('http://localhost:4200/api/articles/');
+    let request = yield fetch('http://localhost:4000/articles/');
     let json = yield request.json();
     this.articles = json.articles;
   }).restartable()) fetchArticles;
